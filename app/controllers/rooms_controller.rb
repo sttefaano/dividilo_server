@@ -56,7 +56,7 @@ class RoomsController < ApplicationController
   def format_room(room)
     users = User.where(room_id: room[:id]).pluck(:id, :name).map { |id, name| {id: id, name: name} }
     transactions = Transaction.where(user_id: users.map { |user| user[:id] })
-    users = users.map { |user| user.merge!(transactions: transactions) }
+    users = users.map { |user| user.merge!(transactions: transactions.select { |t| t.user_id == user[:id]}) }
     room.merge!(users: users)
   end
 end

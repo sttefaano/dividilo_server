@@ -14,4 +14,12 @@ Rails.application.routes.draw do
     patch 'update', to: 'users#update'
     delete 'delete', to: 'users#delete'
   end
+
+  resources :transactions do
+    get 'index', to: 'transactions#index'
+    get 'show', to: 'transactions#show'
+    post 'create', to: 'transactions#create'
+    patch 'update', to: 'transactions#update'
+    delete 'delete', to: 'transactions#delete'
+  end
 end

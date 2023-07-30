@@ -21,6 +21,10 @@
     - `destroy localhost:3000/rooms/:id`
     - `get localhost:3000/users`
     - `post localhost:3000/users`
+    - `destroy localhost:3000/users/:id`
+    - `get localhost:3000/transactions`
+    - `post localhost:3000/transactions`
+    - `destroy localhost:3000/transactions/:id`
 
 * if you want to try the entire system you need to clone [dividilo](https://github.com/sttefaano/dividilo) (_not working yet_)
 
