@@ -12,14 +12,14 @@ class TransactionsController < ApplicationController
         amount: params[:amount],
         description: params[:description],
         user_id: params[:user_id],
-        room_id: params[:room_id]
+        room_id: User.find(params[:user_id]).room.id # should be using param to down the requests made (save in client room_id)
       )
       @transaction.save!
       add_data_to_response(@transaction)
 
       render json: @response
-    rescue
-      add_errors_to_response(@transaction.errors.full_messages)
+    rescue StandardError => e
+      add_errors_to_response([e])
 
       render json: @response
     end
