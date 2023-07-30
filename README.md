@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## how to install and run
 
-Things you may want to cover:
+* clone the repo
 
-* Ruby version
+* run `bundle install`
 
-* System dependencies
+* run `rails server`
 
-* Configuration
+* server should be running, look in the console for localhost port
 
-* Database creation
+## recomendation
 
-* Database initialization
+* use postman if you don't have the client
 
-* How to run the test suite
+  * routes working:
+    - `get localhost:3000/rooms`
+    - `get localhost:3000/rooms/:id`
+    - `post localhost:3000/rooms`
+    - `destroy localhost:3000/rooms/:id`
+    - `get localhost:3000/users`
+    - `post localhost:3000/users`
 
-* Services (job queues, cache servers, search engines, etc.)
+* if you want to try the entire system you need to clone [dividilo](https://github.com/sttefaano/dividilo) (_not working yet_)
 
-* Deployment instructions
 
-* ...
+
+
+
