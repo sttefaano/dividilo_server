@@ -13,8 +13,8 @@ class RoomsController < ApplicationController
       add_data_to_response(@room)
 
       render json: @response
-    rescue
-      add_errors_to_response(@room.errors.full_messages)
+    rescue StandardError => e
+      add_errors_to_response([e])
 
       render json: @response
     end
