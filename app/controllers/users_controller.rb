@@ -17,8 +17,8 @@ class UsersController < ApplicationController
       add_data_to_response(@user)
 
       render json: @response
-    rescue
-      add_errors_to_response(@user.errors.full_messages)
+    rescue StandardError => e
+      add_errors_to_response([e])
 
       render json: @response
     end
